@@ -1,7 +1,5 @@
 import { AddToCart } from "components/cart/add-to-cart";
-import Price from "components/price";
 
-import { VariantSelector } from "./variant-selector";
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
