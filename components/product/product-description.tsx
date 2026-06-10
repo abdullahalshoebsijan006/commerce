@@ -16,7 +16,7 @@ export function ProductDescription({ product }: { product: Product }) {
           />
         </div>
       </div>
-      <VariantSelector options={product.options} variants={product.variants} />
+      
       {product.descriptionHtml ? (
         <Prose
           className="mb-6 text-sm leading-tight dark:text-white/[60%]"
@@ -24,6 +24,63 @@ export function ProductDescription({ product }: { product: Product }) {
         />
       ) : null}
       <AddToCart product={product} />
+      <!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+}
+input, select, button{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+button{
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<form action="/process-order" method="POST">
+
+    <h3>Shipping Address</h3>
+
+    <input type="text" name="fullname" placeholder="Full Name" required>
+
+    <input type="text" name="address" placeholder="Address" required>
+
+    <input type="text" name="city" placeholder="City" required>
+
+    <input type="text" name="zipcode" placeholder="ZIP Code" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <h3>Payment Method</h3>
+
+    <select name="payment" required>
+        <option value="">Select Payment Method</option>
+        <option value="visa">Visa</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="googlepay">Google Pay</option>
+        <option value="paypal">PayPal</option>
+    </select>
+
+    <button type="submit">Buy Now</button>
+
+</form>
+
+</body>
+</html>
     </>
   );
 }
