@@ -1,13 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import { ProductOption, ProductVariant } from "lib/shopify/types";
-import { useRouter, useSearchParams } from "next/navigation";
+import { ProductOption, ProductVariant } from
 
-type Combination = {
-  id: string;
-  availableForSale: boolean;
-  [key: string]: string | boolean;
+boolean;
 };
 
 export function VariantSelector({
@@ -86,9 +82,7 @@ export function VariantSelector({
                 title={`${option.name} ${value}${!isAvailableForSale ? " (Out of Stock)" : ""}`}
                 className={clsx(
                   "flex min-w-[48px] items-center justify-center rounded-full border bg-neutral-100 px-2 py-1 text-sm dark:border-neutral-800 dark:bg-neutral-900",
-                  {
-                    "cursor-default ring-2 ring-blue-600": isActive,
-                    "ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-blue-600":
+                  {duration-300 ease-in-out hover:ring-blue-600":
                       !isActive && isAvailableForSale,
                     "relative z-10 cursor-not-allowed overflow-hidden bg-neutral-100 text-neutral-500 ring-1 ring-neutral-300 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-neutral-300 before:transition-transform dark:bg-neutral-900 dark:text-neutral-400 dark:ring-neutral-700 dark:before:bg-neutral-700":
                       !isAvailableForSale,
